@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class TextAdventureGame {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welcome to the Adventure Game!");
+        System.out.println("You are on a quest to find a hidden treasure.");
+
+        System.out.println("You find yourself standing in front of two paths. Which path will you choose? (1/2)");
+        int pathChoice = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+
+        if (pathChoice == 1) {
+            System.out.println("You chose path 1. You encounter a fierce dragon!");
+            System.out.println("What will you do? (fight/flee)");
+            String dragonDecision = scanner.nextLine();
+
+            if (dragonDecision.equalsIgnoreCase("fight")) {
+                System.out.println("You bravely fight the dragon and find the treasure! You win!");
+            } else {
+                System.out.println("You run away from the dragon and get lost in the forest.");
+                System.out.println("You never find the treasure. Game over!");
+            }
+        } else if (pathChoice == 2) {
+            System.out.println("You chose path 2. You come across a deep chasm.");
+            System.out.println("How will you proceed? (jump/turn back)");
+            String chasmDecision = scanner.nextLine();
+
+            if (chasmDecision.equalsIgnoreCase("jump")) {
+                System.out.println("You take a leap of faith and successfully jump across the chasm!");
+                System.out.println("You discover the treasure! You win!");
+            } else {
+                System.out.println("You decide to turn back, but you encounter the dragon on your way.");
+                System.out.println("The dragon devours you. Game over!");
+            }
+        } else {
+            System.out.println("Invalid input. You stand there unable to make a decision and starve. Game over!");
+        }
+
+        scanner.close();
+    }
+}
